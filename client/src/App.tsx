@@ -6,11 +6,11 @@ import NotFound from "@/pages/not-found";
 import Game from "@/pages/game";
 
 // Get base URL from environment variable or default to '/'
-const base = import.meta.env.VITE_BASE_URL || '/';
+const routerBase = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function AppRouter() {
   return (
-    <WouterRouter base={base}>
+    <WouterRouter base={routerBase}>
       <Switch>
         <Route path="/" component={Game} />
         <Route component={NotFound} />
