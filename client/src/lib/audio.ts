@@ -1,13 +1,15 @@
 // Array of cat meow sounds with proper error handling
+const soundPath = (name: string) => `${import.meta.env.BASE_URL}sounds/${name}`;
+
 const meowSounds = [
-  '/sounds/meow1.wav',
-  '/sounds/meow2.wav',
-  '/sounds/meow3.wav',
-  '/sounds/meow4.wav',
-  '/sounds/meow5.wav'
+  soundPath('meow1.wav'),
+  soundPath('meow2.wav'),
+  soundPath('meow3.wav'),
+  soundPath('meow4.wav'),
+  soundPath('meow5.wav')
 ];
 
-const dogSound = '/sounds/dog.wav';
+const dogSound = soundPath('dog.wav');
 
 let audioContext: AudioContext | null = null;
 const audioBuffers: AudioBuffer[] = [];
